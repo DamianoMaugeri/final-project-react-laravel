@@ -16,9 +16,16 @@ export default function ReviewCard({ reviews }) {
                         <div className="row d-flex flex-column gap-3">
                             {reviews.map((review, index) => (
                                 <div key={index} className={`col d-flex flex-column gap-2 ${style.customSingleCard}`}>
+                                            
                                     <div className="d-flex justify-content-between">
-                                        <div className="card-text fst-italic">{review.content}</div>
+                                        <h3>{review.user.name}</h3>
+                                        
                                         <StarsVote vote={review.rating} />
+                                    </div>
+                                    <div className="col-12">
+                                        
+                                        <div className="card-text fst-italic">{review.content}</div>
+
                                     </div>
 
                                     {/* <div className="card-text fst-italic" >{review.first_name.toUpperCase()} {review.last_name.toUpperCase()}</div> */}

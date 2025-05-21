@@ -1,0 +1,77 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.carouselContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.carouselContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.carouselItem {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+
+  /* Simula col-xs-12 (100%) */
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* Simula col-md-6 (50%) */
+  .carouselItem {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Simula col-lg-4 (33.33%) */
+  .carouselItem {
+    width: 33.3333%;
+  }
+}
+
+/* Pulsanti di navigazione */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: none; /* Nascosti su mobile */
+}
+
+/* Mostra solo su desktop */
+@media (min-width: 768px) {
+  .navButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.leftButton {
+  left: -55px;
+}
+
+.rightButton {
+  right: -55px;
+}
+

@@ -5,7 +5,7 @@ import styles from "./StarsVote.module.css";
 export default function StarsVote({ vote }) {
 
     //media
-    const stars = Math.round(vote / 2);
+    const stars = Math.round(vote);
 
     return (
         <div className={`d-flex align-items-center ${styles.voteContainer}`}>

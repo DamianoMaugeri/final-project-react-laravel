@@ -37,27 +37,9 @@ export default function ShowPage() {
                 <>
                     <HouseShowCard movieEl={movie} />
 
-
+{/* 
                     <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-5 mt-5">
-                        {/* <button
-                            className={`${style.btn} ${emailBoolean ? style['btn-active'] : ''}`}
-                            onClick={() => {
-                                setReviewBoolean(false);
-                                setRentBoolean(false);
-                                setEmailBoolean(!emailBoolean);
-                            }}>
-                            Contatta il proprietario
-                        </button> */}
 
-                        {/* <button
-                            className={`${style.btn} ${rentBoolean ? style['btn-active'] : ''}`}
-                            onClick={() => {
-                                setReviewBoolean(false);
-                                setEmailBoolean(false);
-                                setRentBoolean(!rentBoolean);
-                            }}>
-                            Prenota adesso
-                        </button> */}
 
                         <button
                             className={`${style.btn} ${reviewBoolean ? style['btn-active'] : ''}`}
@@ -66,10 +48,10 @@ export default function ShowPage() {
                             }}>
                             Lascia una recensione
                         </button>
-                    </div>
+                    </div> */}
 
 
-                    {reviewBoolean && <ReviewForm id={movie.id} />}
+                    {/* {reviewBoolean && <ReviewForm id={movie.id} />} */}
 
 
                     <hr />

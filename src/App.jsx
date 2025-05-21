@@ -16,6 +16,7 @@ import axios from 'axios';
 //import AddProperty from './pages/addpropertyPage/AddProperty';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Navigate, useSearchParams } from "react-router-dom";
+import LoginPage from './pages/loginPages/LginPage';
 
 
 
@@ -28,8 +29,8 @@ function App() {
   const [movies, setMovies] = useState(); // film 
 
   //const [movies, setMovies] = useState(); // film a cui hai messo like
-  //const [movies, setMovies] = useState(); // film per te 
-  //const [movies, setMovies] = useState(); // film consigliati 
+  const [recent, setRecent] = useState(); // film recenti
+  const [recommended, setRecommended] = useState(); // film consigliati 
 
   const [searchedTitle, setSearchedTitle] = useState(''); // titolo per la ricerca 
   
@@ -78,6 +79,8 @@ function App() {
         console.log(searchedTitle, "debug prova")
         console.log(res.data)
         setMovies(res.data.movies)
+        setRecent(res.data.recent)
+        setRecommended(res.data.recommended)
        // setSidebarUserOrOwner(true)
 
       }).catch(err => console.error(err))
@@ -91,7 +94,7 @@ function App() {
   return (
     <>
       <GlobalContext.Provider value={{
-        movies, setMovies, fetchMovies , searchedTitle, setSearchedTitle,filters, setFilters, searchParams, setSearchParams,
+        movies, setMovies, fetchMovies , searchedTitle, setSearchedTitle,filters, setFilters, searchParams, setSearchParams,recommended, setRecommended, recent, setRecent
         // houses, setHouses, searchedCity, setSearchedCity,
         // owner, setOwner, fetchHouses, sidebarUserOrOwner,
         // setSidebarUserOrOwner, logout, setSelectedRoomNumbers,
@@ -106,6 +109,7 @@ function App() {
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<MainPage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/:id" element={<ShowPage />} />
             {/* <Route path='/owners' element={<OwnersPage />} />
             <Route path='/owners/:id' element={<OwnerShowpage />} />

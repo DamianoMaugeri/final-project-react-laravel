@@ -4,12 +4,13 @@ import axios from 'axios'
 import HouseCard from "../HouseCard/HouseCard"
 import { Link, useSearchParams, useLocation } from "react-router-dom"
 import Loader from "../Loader/Loader"
+import CardCarousel from "../CardCarousel/Card carousel"
 
 export default function HouseList() {
 
 
      // const { houses, setHouses, searchedCity, fetchHouses } = useContext(GlobalContext)
-    const { movies, setMovies, searchedTitle, fetchMovies } = useContext(GlobalContext);
+    const { movies,  recommended ,recent , setMovies, searchedTitle, fetchMovies } = useContext(GlobalContext);
 
     const location = useLocation();
 
@@ -49,10 +50,24 @@ export default function HouseList() {
 
     return (
 
+
         !movies ? (<Loader />) : movies.length > 0 ?
 
+        
+
             (<div className="container">
+                <div className="row">
+                    <h2>consigliati :</h2>
+                    <CardCarousel content={recommended}/>
+                </div>
+                         <div className="row">
+                            <h2>
+                                nuove uscite :
+                            </h2>
+                    <CardCarousel content={recent}/>
+                </div>
                 <div className="row d-flex flex-wrap row-gap-5 pb-5">
+                    <h2 className="mt-5">tutti i film:</h2>
                     {movies.map((movie, i) => (
                         <div key={i} className="col-lg-4 col-md-6 col-xs-12">
                             {/* <Link className="text-decoration-none text-dark" to={`/${house.title.replace(/ /g, '-')}`} >

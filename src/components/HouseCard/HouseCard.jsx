@@ -19,7 +19,7 @@ export default function HouseCard({ content }) {
             {/* immagine */}
             <div className="position-relative">
                 <img
-                    src={image}
+                    src={`http://localhost:8000/storage/${image}`}
                     onError={(e) => {
                         e.target.onerror = null; // se la immagine e innacesibile 
                         e.target.src = placeHolder; // metti il placeholder
@@ -29,7 +29,7 @@ export default function HouseCard({ content }) {
                 />
                 {/* Cuoricino */}
                 {/* {!isOwnerPage && <HeartButton vote={vote} id={id} />} */}
-                 <HeartButton vote={like} id={id} />
+                 {/* <HeartButton vote={like} id={id} /> */}
             </div>
 
             {/* contenuto della card */}

@@ -10,6 +10,7 @@ export default function MainPage() {
         <div className={style.mainpage} >
             <HeaderMain />
             <SearchBar />
+            
             <HouseList />
         </div>
     )
