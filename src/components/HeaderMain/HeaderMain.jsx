@@ -10,7 +10,8 @@ export default function HeaderMain() {
             {/* <Logo />
             <NavLink className={style.customMenuButton} to='/owners' ><FontAwesomeIcon icon={faCircleUser} style={{ color: "#ffffff" }} /> Area proprietari</NavLink> */}
 
-            <div>header main</div>
+            {/* <div>header main</div> */}
+            <Logo />
 
            <NavLink className={style.customMenuButton} to='/login' ><FontAwesomeIcon icon={faCircleUser} style={{ color: "#ffffff" }} /> accedi o registrati </NavLink> 
 

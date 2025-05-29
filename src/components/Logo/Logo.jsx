@@ -1,4 +1,4 @@
-import LogoBoolBnb from "../../assets/logo.png";
+import LogoBoolBnb from "../../assets/logowhite.png";
 import { Link } from 'react-router-dom';
 import style from "./Logo.module.css";
 import { useContext } from "react";
@@ -14,18 +14,10 @@ export default function Logo() {
                     setSearchedCity("");
                     //fetchHouses();
                     setFilters({
-                        city: "",
-                        rooms: "",
-                        beds: "",
-                        bathrooms: "",
-                        size: "",
-                        price: ""
+                        title:''
+
                     });
-                    setSelectedPrice([0, 5000]);
-                    setSelectedSize([0, 3000]);
-                    setSelectedRoomNumbers(null);
-                    setSelectedBeds(null);
-                    setSelectedBathrooms(null);
+
                 }}
             >
                 <img className={style.logoImage} src={LogoBoolBnb} alt="Logo Boolbnb" />
